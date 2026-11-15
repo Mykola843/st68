@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Навігація Bootstrap 5 — Лекція 4</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body { position: relative; }
+    .navbar-nav .nav-link { color: var(--bs-dark); transition: color .3s ease; }
+    .navbar-nav .nav-link.active { color: var(--bs-primary) !important; font-weight: 600; }
+    section { min-height: 85vh; padding: 110px 0 80px; scroll-margin-top: 65px; }
+    .hero { background: linear-gradient(135deg,#e8f1ff,#f8fbff); }
+    .section-muted { background: #f3f6fa; }
+    .feature-card { border: 0; border-radius: 18px; box-shadow: 0 8px 30px rgba(0,0,0,.06); }
+    .navbar { z-index: 1030; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="90" data-bs-smooth-scroll="true" tabindex="0">
+  <nav id="mainNavbar" class="navbar navbar-expand-lg bg-white sticky-top shadow-sm" data-bs-theme="light" aria-label="Головна навігація">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#home">Bootstrap<span class="text-dark">Навігація</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Відкрити меню"><span class="navbar-toggler-icon"></span></button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" data-bs-scroll="true" data-bs-backdrop="true">
+        <div class="offcanvas-header"><h5 class="offcanvas-title" id="mobileMenuLabel">Меню сайту</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрити"></button></div>
+        <div class="offcanvas-body align-items-lg-center">
+          <ul class="navbar-nav justify-content-center flex-grow-1 gap-lg-2">
+            <li class="nav-item"><a class="nav-link active" href="#home">Головна</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Про сайт</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Можливості</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Додатково</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#gallery">Приклади</a></li><li><a class="dropdown-item" href="#contact">Контакти</a></li></ul></li>
+          </ul>
+          <form class="d-flex gap-2 mt-3 mt-lg-0" role="search" id="searchForm"><input class="form-control rounded-pill" id="searchInput" type="search" placeholder="Пошук розділу" aria-label="Пошук розділу"><button class="btn btn-primary rounded-pill px-4" type="submit">Знайти</button></form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section id="home" class="hero d-flex align-items-center"><div class="container"><div class="row align-items-center"><div class="col-lg-8"><span class="badge text-bg-primary mb-3">Практичне завдання · Лекція 4</span><h1 class="display-4 fw-bold">Навігація на Bootstrap 5</h1><p class="lead text-secondary mt-3">Адаптивна навігаційна панель, випадаюче меню, пошук, Offcanvas та Scrollspy на одній сторінці.</p><a href="#about" class="btn btn-primary btn-lg rounded-pill mt-3">Дізнатися більше</a></div></div></div></section>
+    <section id="about" class="d-flex align-items-center"><div class="container"><h2 class="display-6 fw-bold mb-4">Про сайт</h2><p class="lead col-lg-8">Ця сторінка створена як практичне завдання до лекції «Компоненти Bootstrap 5. Частина 1 — Навігація». Вона демонструє роботу компонентів Bootstrap і адаптацію до різних розмірів екрана.</p></div></section>
+    <section id="services" class="section-muted"><div class="container"><h2 class="display-6 fw-bold mb-4">Можливості</h2><div class="row g-4"><div class="col-md-4"><div class="card feature-card h-100"><div class="card-body p-4"><h3 class="h5">Navbar</h3><p class="mb-0">Зручне меню з переходами між розділами сторінки.</p></div></div></div><div class="col-md-4"><div class="card feature-card h-100"><div class="card-body p-4"><h3 class="h5">Offcanvas</h3><p class="mb-0">Бічна панель, що відкривається на мобільних екранах.</p></div></div></div><div class="col-md-4"><div class="card feature-card h-100"><div class="card-body p-4"><h3 class="h5">Scrollspy</h3><p class="mb-0">Підсвічування активного пункту під час прокручування.</p></div></div></div></div></div></section>
+    <section id="gallery" class="d-flex align-items-center"><div class="container"><h2 class="display-6 fw-bold mb-4">Приклади</h2><p class="lead">Спробуйте змінити ширину вікна браузера, відкрити бічне меню, натиснути «Додатково» та прокрутити сторінку.</p><a href="#services" class="btn btn-outline-primary rounded-pill">Переглянути можливості</a></div></section>
+    <section id="contact" class="section-muted d-flex align-items-center"><div class="container"><h2 class="display-6 fw-bold mb-4">Контакти</h2><p class="lead">Навчальний проєкт із вебтехнологій. Створено з використанням HTML, CSS, JavaScript та Bootstrap 5.</p><a href="#home" class="btn btn-primary rounded-pill">На початок</a></div></section>
+  </main>
+  <footer class="bg-dark text-white text-center py-4"><div class="container">Лекція 4 · Bootstrap 5 · Навігація</div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sections = ['home','about','services','gallery','contact'];
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const term = document.getElementById('searchInput').value.trim().toLowerCase();
+      const names = {home:'головна',about:'про сайт',services:'можливості',gallery:'приклади',contact:'контакти'};
+      const found = sections.find(id => id.includes(term) || names[id].includes(term));
+      if (term && found) { document.getElementById(found).scrollIntoView({behavior:'smooth'}); const menu = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')); if(menu) menu.hide(); }
+      else if(term) alert('Розділ не знайдено. Спробуйте: головна, про сайт, можливості, приклади, контакти.');
+    });
+    document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+      if (window.innerWidth < 992) { const menu = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')); if(menu) menu.hide(); }
+    }));
+  </script>
+</body>
+</html>
